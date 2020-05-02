@@ -1,88 +1,48 @@
-# [Current Development Status - RC1 Release Approaching!]
-# [RC1 Release Cycle looking for zolunteers! Get Involved!](https://github.com/containercraft/ocp-mini-stack/projects/1)
-######  ^ But wait there's more! Shameless plug, yep, seriously see these typos? Need help!
----------------------------------------------------------------------------------
-# CCIO OCP MiniStack Education & Development Lab
-### Get Started [Ansible Method]    
-### Or Get Started Manual Method
-  + [00 Introduction]
-  + [01 Build Host]
-  + [02 Build Bastion]
-  + [03 Build Gateway]
-  + [04 Setup_Dns]
-  + [05 Setup HAProxy]
-  + [06 Setup Dhcp]
-  + [07 Setup Nginx]
-  + [08 Setup Tftpd]
-  + [09 Deploy Cloud]
-  + [10 Configure Cloud]
+# MiniStack Hypervisor Base (Libvirt)
+This repo serves as a Linux OS Hypervisor architecture base.    
+    
+Core Technologies:    
+  - Libvirt/KVM/Qemu    
+  - OpenVSwitch    
+  - Podman    
+  - LXD/LXC    
+  - OpenWRT
 
----------------------------------------------------------------------------------
-     
-![CCIO_OCP MiniStack Lab_Diagram](zweb/drawio/master-ocp-mini-stack.svg)
+### Introduction & Objectives
+```
+Currently under heavy development this hypervisor platform has been 
+functionally tested extensively and is a mature v1 architecture design. 
 
-## What is it?
-Intended for both the new hobby sysadmin and experienced DevOps professional.    
-This set of guides & build tools is aimed at the Single Host Laptop/Desktop/Server Development and Education Paradigm and can be expanded upon once the core fundamentals are understood.    
-    
-By following these guides you will be able to:    
-  1. Demostrate the significant potential of reasonably equipped hardware    
-  2. Improve your understandng and fluency in fitting common commercial software components together    
-  3. Overcome barriers in consuming automation tools to improve your workflow beyond the burden of menial tasks    
-    
+RC1 Development Cycle architecture objectives can be seen in the design below. All
+feature development for RC1 has been implimented in the project at this time and
+barring extenuating circumstances we are in a feature freeze. Additional FRE
+bugs are welcome and will immidiately be staged to RC2 development cycle 
+objectives. 
 
-## Purpose:
+Feature highlights of current gen design includes:
+ - Completely self contained single host lab with multi host expandability support
+ - Zero network or service configuration dependencies external to the host
+ - Zero risk of dns/dhcp leakage onto external networks
+ - Fully featured and production like network implimentation & behavior
+ - Terraform Libvirt virtual machine deployment
 
-Provide a community platform to quickly and seamlessly build high impact education and development environments.    
-    
-## Inspiration:
+Current development status:
+ - Complete build behind single MAC Address locking ethernet networks (IE: corporate/hotel net)
+ - OpenWRT VFW Instance conversion from LXD to docker/podman
+ - Terraform adoption to replace bash/virt-install functions
+ - Support behind single wifi connection
+ - Ansible Polish
 
-The original inspiration for this project came from a desire to have meaningful hands 
-on expreince with a platform that represents the leading edge of modern systems engineering 
-at scale. This design serves to solve for the frustrations and blockers encountered after endless 
-hours of testing different virtual network solutions, architectures, and strategies in 
-search of a paradigm that meets a number of criteria included in the following.
-    
-## Objectives:    
-    
-#### Architecture -  Must be consistent on:
-  + Client Laptops
-  + Client Desktops
-  + Low cost Home Labs
-  + DevOps Lab Servers
-  + 100% Virtual Tenants
-  + Multi-Host Rack Systems
-  + Single Network Interface Devices
-    
-#### Experience - Must be accessible to:    
-  + Easy to setup
-  + Logical to comprehend
-  + Easy to manage & maintain
-  + Capable of multi-host overlays
-  + Easy to use behind Wifi connections
-  + Capable of nesting multiple layers of networks
-  + Eliminate external network or infrastructure requirements
-  + Public Services Delivery enablement through low cost public cloud instance
-    
-#### Result - Must demonstrate success in:
-  + Kubernetes
-  + Bare Metal Hosts
-  + LXD / LXC OS Container Runtimes
-  + Physical & Virtual Switching Gear
-  + Docker/Podman Application Container OCI Runtimes
-  + Libvirt / QEMU / KVM Virtual Machine Environments
+High Impact Fully POC Demonstrated RC2 Road Map Features:
+ - MSIO Ensign project integration to support multi node wireguard overlay networks
 
-<!-- Markdown link & img dfn's -->
-[Ansible Method]:/ansible/
-[00 Introduction]:/00_Introduction.md
-[01 Build Host]:/01_Build_Host.md
-[02 Build Bastion]:/02_Build_Bastion.md
-[03 Build Gateway]:/03_Build_Gateway.md
-[04 Setup_Dns]:/04_Setup_DNS.md
-[05 Setup HAProxy]:/05_Setup_HAProxy.md
-[06 Setup Dhcp]:/06_Setup_DHCP.md
-[07 Setup Nginx]:/07_Setup_Nginx.md
-[08 Setup Tftpd]:/08_Setup_Tftpd.md
-[09 Deploy Cloud]:/09_Deploy_Cloud.md
-[10 Configure Cloud]:/10_Configure_Cloud.md
-[Current Development Status - RC1 Release Approaching!]:/00_Introduction.md
+RC3 Final v1 Release Candidate Roadmap - Primary Objective:
+ - Add support for Red Hat, CentOS, & Ubuntu Distros
+ - Support Disconnected Deployment
+
+Beyond v3:
+ - Develop CI/CD Pipeline & Full Automated Feature Testing
+ - Develop failure based success education & enablement curriculum
+ - Develop "Deploy infrastructure via IaC" curriculum & Hands On DevOps Advocacy
+ - Develop DevSecOps featureset to integrate SecOps as a practice
+```
