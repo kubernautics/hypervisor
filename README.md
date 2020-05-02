@@ -43,8 +43,9 @@ RC3 Final v1 Release Candidate Roadmap - Primary Objective:
    - CentOS
    - Red Hat
    - Ubuntu
+   - Fedora/RedHat CoreOS
 
-Beyond v3:
+Beyond v1:
  - Develop CI/CD Pipeline & Full Automated Feature Testing
  - Develop failure based success education & enablement curriculum
  - Develop "Deploy infrastructure via IaC" curriculum & Hands On DevOps Advocacy
