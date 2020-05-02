@@ -37,8 +37,12 @@ High Impact Fully POC Demonstrated RC2 Road Map Features:
  - MSIO Ensign project integration to support multi node wireguard overlay networks
 
 RC3 Final v1 Release Candidate Roadmap - Primary Objective:
- - Add support for Red Hat, CentOS, & Ubuntu Distros
  - Support Disconnected Deployment
+ - Distros in order of Support:
+   - Fedora
+   - CentOS
+   - Red Hat
+   - Ubuntu
 
 Beyond v3:
  - Develop CI/CD Pipeline & Full Automated Feature Testing
