@@ -1,5 +1,6 @@
 ---
-- debug:
+- name: checking configure_ovs_packages value
+  debug:
     var: configure_ovs_packages
     verbosity: 2
 
@@ -20,6 +21,12 @@
 - name: Run a build-ovs-on-rhel7.sh
   script: files/build-ovs-on-rhel7.sh
   when: not ovs_rpm.stat.exists
+
+- name: Check that the openvswitch rpm exists
+  stat:
+    path: /home/ovs/rpmbuild/RPMS/x86_64/openvswitch-2.12.0-1.el7.x86_64.rpm
+  become: yes
+  register: ovs_rpm
 
 - name: install openvswitch rpm locally
   yum:
