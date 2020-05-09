@@ -1,0 +1,7 @@
+DEVICE=eno1
+BOOTPROTO=none
+HWADDR={{ hwaddr_mac}}
+ONBOOT=yes
+DEVICETYPE=ovs
+TYPE=OVSPort
+OVS_BRIDGE=ovs0

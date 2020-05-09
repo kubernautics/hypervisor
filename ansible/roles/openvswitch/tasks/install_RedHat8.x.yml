@@ -1,0 +1,4 @@
+- name: Running RHEL 8 Playbooks
+  debug:
+    msg:
+    - "RHEL 8 Support Coming soon"
