@@ -55,4 +55,3 @@
 #   src: interface.network
 #   dest: "/etc/systemd/network/{{ item }}.network"
 # when: "not '{{ item }}' == 'lo'"
-# with_items: ansible_interfaces

@@ -3,6 +3,9 @@ packages_ovs_fedora:
   - openvswitch
   - network-scripts-openvswitch
 
+packages_ova_rhel8:
+  - openvswitch
+
 packages_ova_rhel7:
   - wget
   - openssl-devel

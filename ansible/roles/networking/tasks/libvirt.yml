@@ -6,6 +6,9 @@
 - name: MSIO | Networking | Libvirt | Install Min2Config Packages RHEL 7
   include: libvirt_install_rhel7.x.yml
   when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_version']|int == 7
+- name: MSIO | Networking | Libvirt | Install Min2Config Packages RHEL 8
+  include: libvirt_install_rhel8.x.yml
+  when: ansible_facts['distribution'] == "RedHat" and ansible_facts['distribution_version']|int == 8
 - name: Ensure libvirtd service is started
   systemd:
     name: libvirtd
