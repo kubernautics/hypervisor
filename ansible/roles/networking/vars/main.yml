@@ -8,5 +8,20 @@ packages_libvirt_fedora:
   - libvirt-client
   - python3-libvirt
   - python3-lxml
+packages_libvirt_rhel7:
+  - qemu-kvm
+  - libvirt
+  - libguestfs-tools
+  - python-lxml
+  - libvirt-python
+  - python-dns
+packages_libvirt_rhel8:
+  - qemu-kvm
+  - libvirt
+  - libguestfs-tools
+  - libvirt-client
+  - python3-lxml
+  - python3-libvirt
+  - python3-dns
 packages_openvswitch_fedora:
   - openvswitch

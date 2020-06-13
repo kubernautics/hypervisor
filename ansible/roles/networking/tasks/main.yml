@@ -4,3 +4,6 @@
 - include: ./openvswitch.yml
 - include: ./libvirt.yml
 - include: ./networkd.yml
+  when: ansible_facts['distribution'] != "RedHat"
+- include: configure_ifcfg.yml
+  when: ansible_facts['distribution'] == "RedHat"

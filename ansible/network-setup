@@ -15,5 +15,7 @@
       file:
         path: /root/.ccio/ocp-mini-stack/ansible/bin/init-hypervisor-network
         mode: '0775'
+      when: ansible_facts['distribution'] != "RedHat"
     - name: Network 
       shell: "/root/.ccio/ocp-mini-stack/ansible/bin/init-hypervisor-network external {{ external_host_interface }}"
+      when: ansible_facts['distribution'] != "RedHat"

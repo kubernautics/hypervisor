@@ -32,7 +32,7 @@
   with_items:
     - network
     - NetworkManager
-- name: Enable systemd-networkd & systemd-resolved
+- name: enabled systemd-networkd & systemd-resolved
   service:
     name: "{{ item }}"
     enabled: yes
@@ -55,4 +55,3 @@
 #   src: interface.network
 #   dest: "/etc/systemd/network/{{ item }}.network"
 # when: "not '{{ item }}' == 'lo'"
-# with_items: ansible_interfaces
