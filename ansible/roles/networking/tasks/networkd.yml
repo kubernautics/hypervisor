@@ -24,8 +24,7 @@
     src: "templates/networking/interface.network"
     dest: "/etc/systemd/network/{{ item }}.network"
   with_items:
-    - "{{ external_interface }t
-}
+    - "{{ external_interface }}"
 - name: Disable Network Scripts and NetworkManager
   service:
     name: "{{ item }}"
