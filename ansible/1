@@ -5,7 +5,7 @@
     state: directory
 - name: Write Networkd OVS Bridge Configuration
   template:
-    src: "templates/networking/{{ item }}.network"
+    src: "{{ item }}.network"
     dest: "/etc/systemd/network/{{ item }}.network"
   with_items:
     - external
@@ -21,7 +21,7 @@
     - mgmt2
 - name: Write Networkd OVS External Port Configuration
   template:
-    src: "templates/networking/interface.network"
+    src: interface.network
     dest: "/etc/systemd/network/{{ item }}.network"
   with_items:
     - "{{ external_interface }}"
